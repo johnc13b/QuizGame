@@ -7,15 +7,15 @@ var quizInstructions = document.querySelector("#quiz-instructions");
 var startButton = document.querySelector("#start-quiz");
 
 var interval;
-var seconds = 75;
+var seconds = 30;
 var quizQuestion;
 var selectionOne;
 var selectionTwo;
 var selectionThree;
 var selectionFour;
 var line;
-var correctAnswer;
-var wrongAnswer;
+var answerCorrect;
+var answerWrong;
 var scoreMessage;
 var label;
 var input;
@@ -41,88 +41,87 @@ function startTimer(){
 function firstQuestion(){
     removeQuizIntro();
     createQuestionElements();
-    quizQuestion.innerHTML = "Where in the HTML file should a JavaScript link be placed?";
-    selectionOne.innerHTML = "1. Top";
-    selectionTwo.innerHTML = "2. Middle";
-    selectionThree.innerHTML = "3. Bottom";
-    selectionFour.innerHTML = "4. Right";
+    quizQuestion.innerHTML = "Which of the following should enclose an if/else statement?";
+    selectionOne.innerHTML = "Parentheses";
+    selectionTwo.innerHTML = "Curly Brackets";
+    selectionThree.innerHTML = "Quotes";
+    selectionFour.innerHTML = "Square Brackets";
     selectionOne.onclick = function(){
-        secondQuestion();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
-    selectionTwo.onclick = function(){
-        secondQuestion();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
-    selectionThree.onclick = function(){
         secondQuestion();
         createLine();
         correctAns();
     }
-    selectionFour.onclick = function(){
+    selectionTwo.onclick = function(){
         secondQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
+    }
+    selectionThree.onclick = function(){
+        secondQuestion();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
+    }
+    selectionFour.onclick = function(){
+        secondQuestion();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
     }
 }
 
 function secondQuestion(){
-    quizQuestion.innerHTML = "What block of code used to perform a particular task called?";
-    selectionOne.innerHTML = "1. Function";
-    selectionTwo.innerHTML = "2. Array";
-    selectionThree.innerHTML = "3. Element";
-    selectionFour.innerHTML = "4. Button";
+    quizQuestion.innerHTML = "Which of the following is NOT a commonly used data type?";
+    selectionOne.innerHTML = "Booleans";
+    selectionTwo.innerHTML = "Strings";
+    selectionThree.innerHTML = "Numbers";
+    selectionFour.innerHTML = "Alerts";
     removeAns();
     selectionOne.onclick = function(){
+        thirdQuestion();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
+    }
+    selectionTwo.onclick = function(){
+        thirdQuestion();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
+    }
+    selectionThree.onclick = function(){
+        thirdQuestion();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
+    }
+    selectionFour.onclick = function(){
         thirdQuestion();
         createLine();
         correctAns();
     }
-    selectionTwo.onclick = function(){
-        thirdQuestion();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
-    selectionThree.onclick = function(){
-        thirdQuestion();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
-    selectionFour.onclick = function(){
-        thirdQuestion();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
 }
 
-// Function to generate third question and seek a user selection to the available answers.
 function thirdQuestion(){
-    quizQuestion.innerHTML = "In JavaScript, what is the correct method to share something with a user?";
-    selectionOne.innerHTML = "1. Prompt";
-    selectionTwo.innerHTML = "2. Alert";
-    selectionThree.innerHTML = "3. Confirm";
-    selectionFour.innerHTML = "4. Siren";
+    quizQuestion.innerHTML = "A very useful tool used during development and debugging for printing content to the debugger is___.";
+    selectionOne.innerHTML = "alerts";
+    selectionTwo.innerHTML = "console.log";
+    selectionThree.innerHTML = "Javascript";
+    selectionFour.innerHTML = "Terminal/Bash";
     removeAns();
     selectionOne.onclick = function(){
         fourthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionTwo.onclick = function(){
         fourthQuestion();
@@ -131,48 +130,47 @@ function thirdQuestion(){
     }
     selectionThree.onclick = function(){
         fourthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionFour.onclick = function(){
         fourthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
 }
 
-// Function to generate fourth question and seek a user selection to the available answers.
 function fourthQuestion(){
-    quizQuestion.innerHTML = "How do you declare a variable in JavaScript?";
-    selectionOne.innerHTML = "1. variable newVariable; ";
-    selectionTwo.innerHTML = "2. va Newvariable; ";
-    selectionThree.innerHTML = "3. v newVariable; ";
-    selectionFour.innerHTML = "4. var newVariable; ";
+    quizQuestion.innerHTML = "When was Javascript invented?";
+    selectionOne.innerHTML = "2009";
+    selectionTwo.innerHTML = "2000";
+    selectionThree.innerHTML = "1997";
+    selectionFour.innerHTML = "1995";
     removeAns();
     selectionOne.onclick = function(){
         fifthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionTwo.onclick = function(){
         fifthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionThree.onclick = function(){
         fifthQuestion();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionFour.onclick = function(){
         fifthQuestion();
@@ -181,49 +179,47 @@ function fourthQuestion(){
     }
 }
 
-// Function to generate first question and seek a user selection to the available answers.
 function fifthQuestion(){
-    quizQuestion.innerHTML = "In Javascript, how do you capture an event triggered by the user?";
-    selectionOne.innerHTML = "1. Alert";
-    selectionTwo.innerHTML = "2. For loop";
-    selectionThree.innerHTML = "3. Event listener";
-    selectionFour.innerHTML = "4. While loop";
+    quizQuestion.innerHTML = "Arrays in JavaScript can be used to store___.";
+    selectionOne.innerHTML = "More arrays";
+    selectionTwo.innerHTML = "Booleans";
+    selectionThree.innerHTML = "Numbers & Strings";
+    selectionFour.innerHTML = "all of the above";
     removeAns();
     selectionOne.onclick = function(){
         allDone();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionTwo.onclick = function(){
         allDone();
-        deductTime();
+        subTime();
         createLine();
         wrongAns();
-        deductScore();
+        subScore();
     }
     selectionThree.onclick = function(){
+        allDone();
+        subTime();
+        createLine();
+        wrongAns();
+        subScore();
+    }
+    selectionFour.onclick = function(){
         allDone();
         createLine();
         correctAns();
     }
-    selectionFour.onclick = function(){
-        allDone();
-        deductTime();
-        createLine();
-        wrongAns();
-        deductScore();
-    }
 }
 
-// Function to let user know the quiz is done, to display the score, and ask for initials to save score.
 function allDone(){
     clearInterval(interval);
     removeQuizBtns();
     removeAns();
     createAllDoneElements();
-    quizQuestion.innerHTML = "All done!";
+    quizQuestion.innerHTML = "FINISHED!";
     scoreMessage.textContent = "Your final score is " + score;
     label.textContent = "Enter Initials: ";
     submitButton.innerHTML = "Submit";
@@ -233,7 +229,6 @@ function allDone(){
     }
 }
 
-// Function to display highscores to user.
 function highScores(){
     hideNav();
     removeAllDone();
@@ -248,20 +243,17 @@ function highScores(){
     }
 }
 
-// Function to take user back to initial page after clicking the go back button.
 function goBack(){
     removeHighscores();
     addInitialPage();
 }
 
-// Function to remove initial page after start quiz button is clicked.
 function removeQuizIntro(){
     headerDisplay.style.display = "none";
     quizInstructions.style.display = "none";
     startButton.style.display = "none";
 }
 
-// Function to create elements to display questions to user.
 function createQuestionElements(){
     quizQuestion = document.createElement("h2");
     container.appendChild(quizQuestion);
@@ -275,46 +267,39 @@ function createQuestionElements(){
     container.appendChild(selectionFour);
 }
 
-// Function to create line to display below question after user selects a response.
 function createLine(){
     line = document.createElement("hr");
     container.appendChild(line);
 }
 
-// Function to remove message to user about selection being right or wrong.
 function removeAns(){ 
     setTimeout(() => {
         line.remove();
-        correctAnswer.remove();
-        wrongAnswer.remove();
+        answerCorrect.remove();
+        answerWrong.remove();
     }, 500)
 }
 
-// Function to create message to user that selection was correct.
 function correctAns(){
-    correctAnswer = document.createElement("p");
-    correctAnswer.textContent = "Correct!";
-    container.appendChild(correctAnswer);
+    answerCorrect = document.createElement("p");
+    answerCorrect.textContent = "GREAT!";
+    container.appendChild(answerCorrect);
 }
 
-// Function to create message to user that selection was wrong.
 function wrongAns(){
-    wrongAnswer = document.createElement("p");
-    wrongAnswer.textContent = "Wrong!";
-    container.appendChild(wrongAnswer);
+    answerWrong = document.createElement("p");
+    answerWrong.textContent = "Incorrect!";
+    container.appendChild(answerWrong);
 }
 
-// Function to deduct time from timer when user selects wrong answer.
-function deductTime(){
+function subTime(){
     seconds = seconds - 10;
 }
 
-// Function to deduct points from score when user selects wrong answer.
-function deductScore(){
+function subScore(){
     score = score - 20;
 }
 
-// Function to remove quiz buttons after last question is shown to user.
 function removeQuizBtns(){
     selectionOne.remove();
     selectionTwo.remove();
@@ -322,7 +307,6 @@ function removeQuizBtns(){
     selectionFour.remove();
 }
 
-// Function to create elements to display to user after all quiz questions are answered.
 function createAllDoneElements(){
     scoreMessage = document.createElement("p");
     container.appendChild(scoreMessage);
@@ -336,21 +320,18 @@ function createAllDoneElements(){
     container.appendChild(submitButton);
 }
 
-// Function to save user initials and score to browser.
 function saveUser(){
     user = input.value;
     localStorage.setItem("user", user);
     localStorage.setItem("score", score);
 }
 
-// Function to hide nav elements when users is shown highscores.
 function hideNav(){
     viewHighscores.style.visibility = "hidden";
     secondsDisplay.style.visibility = "hidden";
     timeLabel.style.visibility = "hidden";
 }
 
-// Function to remove elements user sees after answering last question.
 function removeAllDone(){
     scoreMessage.remove();
     label.remove();
@@ -358,7 +339,6 @@ function removeAllDone(){
     submitButton.remove();
 }
 
-// Function to create elements displayed to user when looking at highscores.
 function createHighscoresElements(){
     quizQuestion.innerHTML = "Highscores";
     highScoresList = document.createElement("ol");
@@ -378,7 +358,6 @@ function createHighscoresElements(){
     container.appendChild(clearHsBtn);
 }
 
-// Function to remove elements displayed to user when looking at highscores,
 function removeHighscores(){
     quizQuestion.remove();
     highScoresList.remove();
@@ -386,9 +365,8 @@ function removeHighscores(){
     clearHsBtn.remove();
 }
 
-// Function to add initial page after user clicks button to go back.
 function addInitialPage(){
-    seconds = 75;
+    seconds = 30;
     score = 100;
     secondsDisplay.textContent = seconds;
     viewHighscores.style.visibility = "visible";
@@ -399,7 +377,7 @@ function addInitialPage(){
     startButton.style.display = "block";
 }
 
-function viewHighscores(){
+function viewHighscore(){
     hideNav();
     removeQuizIntro();
     quizQuestion = document.createElement("h2");
@@ -416,4 +394,4 @@ function viewHighscores(){
 }
 
 startButton.addEventListener("click", startTimer);
-viewHighscores.addEventListener("click", viewHighscores);
+viewHighscores.addEventListener("click", viewHighscore);
