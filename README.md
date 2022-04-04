@@ -1,4 +1,5 @@
 # Quiz Game
+### Description
 Test your basic knowledge of JavaScript with a short 30 second quiz! 
 
 The quiz contains 5 multiple choice questions. Answer correctly and you advance to the next. Answer it incorrectly and you will lose 10 seconds from the timer and 20 points deducted from your maximum points total.
