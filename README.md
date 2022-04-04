@@ -4,6 +4,9 @@ Test your basic knowledge of JavaScript with a short 30 second quiz! Answer a qu
 ### Coding Language
 HTML, CSS, JavaScript
 
+### Deployed URL
+https://johnc13b.github.io/quizgame/
+
 #
 ### Screenshots
 ![image](https://user-images.githubusercontent.com/100248387/161459230-2cde6adc-f92a-44fd-b310-df1558900d49.png)
