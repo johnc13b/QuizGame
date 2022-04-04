@@ -282,7 +282,7 @@ function removeAns(){
 
 function correctAns(){
     answerCorrect = document.createElement("p");
-    answerCorrect.textContent = "GREAT!";
+    answerCorrect.textContent = "Finished!";
     container.appendChild(answerCorrect);
 }
 
